@@ -6,10 +6,25 @@ import { useRouter } from "next/router";
 
 import Profile from "@components/profile";
 
-const Profile = () => {
+const UserProfile = () => {
+
+  const { data: session } = useSession();
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const response = await fetch(`/api/users/${session?.user.id}/posts`);
+      const data = await response.json();
+
+      setPosts(data)
+    }
+
+    if(session?.user.id) fetchPosts();
+  }, [])
+
 
   const handleEdit = () => {
-
+    
   };
 
   const handleDelete = async () => {
@@ -21,11 +36,11 @@ const Profile = () => {
     <Profile 
       name="My"
       desc="Welcome to your Personalized Profile Page"
-      data={[]}
+      data={posts}
       handleEdit={handleEdit}
       handdleDelete={handleDelete}
     />
   )
 }
 
-export default Profile
+export default UserProfile;
