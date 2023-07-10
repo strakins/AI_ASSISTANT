@@ -27,9 +27,9 @@ const Navbar = () => {
     <nav className='w-full flex-between mb-16 pt-3'>
       <Link href='/' className='flex gap-2 flex-center'>
         <Image 
-          src='/assets/images/logo.svg' 
-          width={30}
-          height={30}
+          src='/assets/images/strakins_logo0.png' 
+          width={35}
+          height={35}
           className='pbject-contain'
         />
         <p className='logo_text'>StrakinsAI</p>
