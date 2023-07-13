@@ -1,5 +1,5 @@
 # AI ASSISTANT
-
+![Preview](https://raw.githubusercontent.com/strakins/My-Images/main/strakinai.png)
 ## Dependencies
 
  - NextJS

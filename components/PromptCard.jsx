@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
 
-const PromptCard = ({ post, handleTagCLick, handleEdit, handleDelete }) => {
+const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
 
   const {data : session} = useSession();
   const [copied, setCopied ] = useState(false);
@@ -49,7 +49,7 @@ const PromptCard = ({ post, handleTagCLick, handleEdit, handleDelete }) => {
       <p className='my-4 font-satoshi text-sm text-slate-900'>{post.prompt}</p>
       <p 
         className='font-inter text-sm blue_gradient cursor-pointer'
-        onClick={() => handleCLick && handleTagCLick(post.tag)}
+        onClick={() => handleTagClick && handleTagClick(post.tag)}
       >
         {post.tag}
       </p>
